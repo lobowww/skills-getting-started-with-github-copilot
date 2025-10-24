@@ -25,6 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+          <div class="participants">
+            <div class="participants-title">Participantes</div>
+            <ul class="participants-list">
+              ${details.participants.map(participant => `
+                <li>
+                  <span class="participant-avatar">${getInitials(participant)}</span>
+                  <span class="participant-name">${participant}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
         `;
 
         activitiesList.appendChild(activityCard);
@@ -83,4 +94,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize app
   fetchActivities();
+
+  // Add this helper function at the beginning of the file, after DOMContentLoaded
+  function getInitials(name) {
+    return name
+      .split(' ')
+      .map(word => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  }
 });
