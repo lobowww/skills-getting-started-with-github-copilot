@@ -181,6 +181,27 @@ footer {
   font-size: 14px;
 }
 
+/* Remove button (small ×) next to participant */
+.activity-card .participant-remove {
+  margin-left: 8px;
+  background: transparent;
+  border: none;
+  color: #c62828;
+  font-weight: 700;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.12s ease;
+}
+
+.activity-card .participant-remove:hover {
+  background: rgba(198,40,40,0.08);
+}
+
 /* Circular avatar with initials */
 .activity-card .participant-avatar {
   width: 32px;
