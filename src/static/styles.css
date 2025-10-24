@@ -142,3 +142,76 @@ footer {
   padding: 20px;
   color: #666;
 }
+
+/* Participants section inside activity-card */
+.activity-card .participants {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #eee;
+}
+
+/* Title above the participants list */
+.activity-card .participants-title {
+  font-size: 13px;
+  color: #1a237e;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Participants list: stacks vertically on narrow screens, flows inline on wider ones */
+.activity-card .participants-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Each participant entry as a compact pill with avatar + name */
+.activity-card .participants-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f6fbff;
+  border: 1px solid #e6f0ff;
+  padding: 6px 10px;
+  border-radius: 20px;
+  color: #1a237e;
+  font-size: 14px;
+}
+
+/* Circular avatar with initials */
+.activity-card .participant-avatar {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#cfe8ff,#e8f4ff);
+  color: #054a91;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  border: 1px solid rgba(5,74,145,0.08);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+}
+
+/* Participant name styling */
+.activity-card .participant-name {
+  color: #16325c;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Small screens: make pills take full width in a column for readability */
+@media (max-width: 480px) {
+  .activity-card .participants-list {
+    flex-direction: column;
+  }
+  .activity-card .participants-list li {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
